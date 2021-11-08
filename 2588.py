@@ -1,0 +1,10 @@
+inputA = int(input())
+inputB = int(input())
+b_first = int(inputB/100)
+b_second = int((inputB%100)/10)
+b_third = int(inputB%10)
+
+print(b_third * inputA)
+print(b_second * inputA)
+print(b_first * inputA)
+print(inputA*inputB)
