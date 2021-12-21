@@ -1,0 +1,17 @@
+import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+ 
+public class Main {
+	public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String inputString = br.readLine(); //문자열 입력
+ 
+		// 공백을 기준으로 단어 분리
+		StringTokenizer st = new StringTokenizer(inputString," ");
+		
+		// countTokens() 함수로 단어 개수 파악
+		System.out.println(st.countTokens());	
+	}
+}
