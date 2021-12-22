@@ -1,0 +1,75 @@
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main{
+    public static void main(String[] args) throws IOException{
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String inputStr = br.readLine();
+        int result = 0;
+        
+        for(int i=0;i<inputStr.length();i++){
+            char temp = inputStr.charAt(i);
+            
+            if(temp == 'c') {
+				if(i < inputStr.length() - 1) { //마지막 글자일 경우를 상정
+					if(inputStr.charAt(i + 1) == '=') {		//c=
+						i++;		
+					}
+					else if(inputStr.charAt(i + 1) == '-') { //c-
+						i++;
+					}
+				}
+			}
+			else if(temp == 'd') {
+				if(i < inputStr.length() - 1) {
+					if(inputStr.charAt(i + 1) == 'z') {
+						if(i < inputStr.length() - 2) {
+							if(inputStr.charAt(i + 2) == '=') {	 //dz=
+								i += 2;
+							}
+						}
+					}
+					else if(inputStr.charAt(i + 1) == '-') {	//d-
+						i++;
+					}
+				}
+			}
+			else if(temp == 'l') {
+				if(i < inputStr.length() - 1) {//마지막 글자일 경우를 상정
+					if(inputStr.charAt(i + 1) == 'j') {	//lj
+						i++;
+					}
+				}
+			}
+		    
+			else if(temp == 'n') {
+				if(i < inputStr.length() - 1) {//마지막 글자일 경우를 상정
+					if(inputStr.charAt(i + 1) == 'j') {	//nj
+						i++;
+					}
+				}
+			}
+ 
+			else if(temp == 's') {
+				if(i < inputStr.length() - 1) {//마지막 글자일 경우를 상정
+					if(inputStr.charAt(i + 1) == '=') {	//s=
+						i++;
+					}
+				}
+		    }
+ 
+			else if(temp == 'z') {
+				if(i < inputStr.length() - 1) {//마지막 글자일 경우를 상정
+					if(inputStr.charAt(i + 1) == '=') {	//z=
+						i++;
+					}
+				}
+			}
+            
+          result++;  
+        }
+        System.out.println(result);
+    }
+}
