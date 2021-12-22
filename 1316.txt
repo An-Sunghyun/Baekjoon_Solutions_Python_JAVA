@@ -1,0 +1,43 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+ 
+public class Main {
+ 
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+ 
+	public static void main(String[] args) throws IOException {
+ 
+		int result = 0;
+		int count = Integer.parseInt(br.readLine());
+ 
+		for (int i = 0; i < count; i++) {
+			if (checkGroupNum()) {
+				result++;
+			}
+		}
+		System.out.print(result);
+	}
+ 
+	public static boolean checkGroupNum() throws IOException {
+		boolean[] check = new boolean[26];
+		int prev = 0;
+		String inputStr = br.readLine();
+		
+		for(int i = 0; i < inputStr.length(); i++) {
+			int current = inputStr.charAt(i);
+			if (prev != current) {		
+				if (!check[current - 'a']) {
+					check[current - 'a'] = true;
+					prev = current;	
+				}
+				else {
+					return false;	
+				}
+			}
+		}    
+		return true;
+	}
+}
+
+//참고 : https://st-lab.tistory.com/69
